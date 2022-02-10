@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container-prin {
+    margin-top: 60px
+}
+
+div.container-table {
+    padding: 0;
+    margin-top: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+thead {
+    background-color: #8FBC8F;
+    text-align: center;
+}
+
+.tb-inicio {
+    border-top-left-radius: 10px;
+}
+
+.tb-fim {
+    border-top-right-radius: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+
+i {
+    margin-right: 10px;
+}
