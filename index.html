@@ -17,7 +17,7 @@
 
 <body>
     <div class="container container-prin">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#meuModal"><i class="bi bi-plus"></i>Adicionar Cliente</button>
+        <button onclick="btnSave()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#meuModal"><i class="bi bi-plus"></i>Adicionar Cliente</button>
         <div class="container container-table">
             <table>
                 <thead>
@@ -38,13 +38,17 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Cadastro de Cliente</h5>
+              <h5 id="titleCad" class="modal-title">Cadastro de Cliente</h5>
+              <h5 id="titleEdit" class="modal-title">Editar Cliente</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
                 <form id="enviaForm" action="" method="post">
+                  <div class="col">
+                    <input hidden type="text" id="idUser" class="form-control">
+                  </div>
                     <div class="form-row">
                       <div class="col">
                           <label for="">Nome</label>
@@ -68,8 +72,9 @@
                   </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger"  data-dismiss="modal">Cancelar</button>
-              <button type="button" id="salve" class="btn btn-success">Salvar</button>
+              <button type="button" onclick="limpaForm()" class="btn btn-danger"  data-dismiss="modal">Cancelar</button>
+              <button type="button" id="salve" class="btn btn-success" data-dismiss="modal">Salvar</button>
+              <button type="button" onclick="atualizarDados()" id="btn-edit" class="btn btn-warning" data-dismiss="modal">Editar</button>
             </div>
           </form>
           </div>
