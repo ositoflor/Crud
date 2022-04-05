@@ -1,5 +1,5 @@
 function listaPessoas(){
-$.getJSON(`https://api-flor.herokuapp.com/pessoas`, function (data, status) {
+$.getJSON(`https://apiflor.herokuapp.com/pessoas`, function (data, status) {
     const pessoas_db = []
 
     for (const pessoa of data) {
@@ -23,7 +23,7 @@ $.getJSON(`https://api-flor.herokuapp.com/pessoas`, function (data, status) {
 
 listaPessoas()
 function edit(id) {
-    $.getJSON(`https://api-flor.herokuapp.com/pessoas/${id}`, function (data, status) {
+    $.getJSON(`https://apiflor.herokuapp.com/pessoas/${id}`, function (data, status) {
                 $("#idUser").val(data.id)
                 $("#nome").val(data.nome)
                 $("#email").val(data.email)
@@ -37,7 +37,7 @@ function edit(id) {
 }
 
 $("#salve").click(function () {
-    $.post("https://api-flor.herokuapp.com/pessoas",
+    $.post("https://apiflor.herokuapp.com/pessoas",
         {
             "nome": $("#nome").val(),
             "email": $("#email").val(),
@@ -74,7 +74,7 @@ function atualizarDados() {
 
     $.ajax({
         type: "PUT",
-        url: `https://api-flor.herokuapp.com/pessoas/${dados[0].value}`,
+        url: `https://apiflor.herokuapp.com/pessoas/${dados[0].value}`,
         data: dadosSalvar,
         success: function (response) {
             listaPessoas()
@@ -86,7 +86,7 @@ function atualizarDados() {
     function excluiPessoa(id) {
         $.ajax({
             type: "DELETE",
-            url: `https://api-flor.herokuapp.com/pessoas/${id}`,
+            url: `https://apiflor.herokuapp.com/pessoas/${id}`,
             success: function (response) {
                 listaPessoas()
             }
